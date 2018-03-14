@@ -6,9 +6,7 @@ $(document).ready(function(){
         $.post("http://greenmunchies.tk/app712/login.php",{ usu : usu, pass : pass},function(respuesta){
             if (respuesta == true) {
                 $.mobile.changePage("#home");
-			$('#listacom').empty();
-			$('#vermas').empty();
-		    	
+					    	
 			
 
             }
@@ -19,6 +17,11 @@ $(document).ready(function(){
             }
         });
     });
+	
+				$('#listacom').empty();
+					$('#vermas').empty();
+
+
    
         $.getJSON("http://greenmunchies.tk/app712/traer.php", function(resultados){
             
