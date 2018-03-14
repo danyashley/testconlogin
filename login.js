@@ -6,6 +6,10 @@ $(document).ready(function(){
         $.post("http://greenmunchies.tk/app712/login.php",{ usu : usu, pass : pass},function(respuesta){
             if (respuesta == true) {
                 $.mobile.changePage("#home");
+					$('#listacom').empty();
+					$('#vermas').empty();
+
+
             }
             else{
                 $.mobile.changePage('#pageError', 'pop', true, true);
