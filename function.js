@@ -18,10 +18,7 @@ $(document).ready(function(){
         });
     });
 	
-				$('#listacom').empty();
-					$('#vermas').empty();
-
-
+		
    
         $.getJSON("http://greenmunchies.tk/app712/traer.php", function(resultados){
             
@@ -49,8 +46,7 @@ $(document).ready(function(){
         });
 		
 
-    });
-	
+  
 
 
 	function info(x){
