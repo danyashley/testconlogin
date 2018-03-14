@@ -1,4 +1,7 @@
 $(document).ready(function(){
+		$('#listacom').empty();
+		$('#vermas').empty();
+
 	 $("#errorMsg").hide();
     $("#btnLogin").click(function(){
         var usu = $("#txtuser").val();
@@ -6,7 +9,18 @@ $(document).ready(function(){
         $.post("http://greenmunchies.tk/app712/login.php",{ usu : usu, pass : pass},function(respuesta){
             if (respuesta == true) {
                 $.mobile.changePage("#home");
-				   $.getJSON("http://greenmunchies.tk/app712/traer.php", function(resultados){
+					
+
+            }
+            else{
+                $.mobile.changePage('#pageError', 'pop', true, true);
+                /*$("#errorMsg").fadeIn(300);
+                $("#errorMsg").css("display", "block");*/
+            }
+        });
+    });
+   
+        $.getJSON("http://greenmunchies.tk/app712/traer.php", function(resultados){
             
 			for(i = 0; i<resultados.length; i++){
 				$.each(resultados[i], function(i, campo){
@@ -30,24 +44,10 @@ $(document).ready(function(){
 				
 			} 
         });
-	
-					
-
-            }
-            else{
-                $.mobile.changePage('#pageError', 'pop', true, true);
-                /*$("#errorMsg").fadeIn(300);
-                $("#errorMsg").css("display", "block");*/
-            }
-        });
-    });
-   
-
 		
 
     });
 	
-	     
 
 
 	function info(x){
